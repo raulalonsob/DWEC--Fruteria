@@ -6,14 +6,37 @@ var kilos=[0,0,0,0,0,0,0,0,0,0];
 
 
 /**
- * Cálculo del precio total y del precio medio
+ * Cálculo del precio total, kilos totales y precio medio
  */
 
 function total(){
-    var precioTotal=0;
+    let precioTotal=0;
 
-    precios.forEach()
+    
 
+    precios.forEach((precio, i, arrayPrecio) => {
+        precioTotal = precioTotal + (precio * kilos[i]);
+    });
+
+    console.log(precioTotal);
+
+    return precioTotal;
+
+}
+
+function pesoTotal(){
+    let total=0
+    
+    kilos.forEach((peso, i, kilos) => {
+        total = total + peso;
+    });
+    return total;
+}
+function precioMedio(){ 
+    let medio=0;
+    medio= (total()/pesoTotal());
+
+    return medio;
 }
 
 /**
@@ -68,4 +91,10 @@ function sumarFresas(){
 function sumarMelocotones(){
     kilos[9]=kilos[9]+1;
     console.log(kilos);
+}
+
+function finalizarPedido(){
+    console.log("precio total:" +total());
+    console.log("peso total:" +pesoTotal());
+    console.log("precio medio:"+precioMedio());
 }
