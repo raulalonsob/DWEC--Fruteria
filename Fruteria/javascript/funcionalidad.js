@@ -56,43 +56,6 @@ var melocoton= new FrutaVerano("melocoton",0,1.40,"no es de proximidad","Murcia"
 
 
 
-/**
- * Cálculo del precio total, kilos totales y precio medio
- */
-/**
- 
-function total(){
-    let precioTotal=0;
-
-    
-
-    precios.forEach((precio, i, arrayPrecio) => {
-        precioTotal = precioTotal + (precio * kilos[i]);
-    });
-
-    console.log(precioTotal);
-
-    return precioTotal;
-
-}
-
-function pesoTotal(){
-    let total=0
-    
-    kilos.forEach((peso, i, kilos) => {
-        total = total + peso;
-    });
-    return total;
-}
-function precioMedio(){ 
-    let medio=0;
-    medio= (total()/pesoTotal());
-
-    return medio;
-}
-
- */
-
 
 /**
  * Suma de los kg y recogida de peso y kg totales
@@ -101,7 +64,7 @@ var pesoTotal = 0;
 
  function sumarMelones(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
+    kg = Number(kg);
     melon.kg= melon.kg + kg;
     pesoTotal=pesoTotal+kg;
     
@@ -109,70 +72,150 @@ var pesoTotal = 0;
 
  function sumarManzanas(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
+    kg = Number(kg);
     manzana.kg= manzana.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarPeras(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
+    kg = Number(kg);
     manzana.kg= manzana.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarFrambuesas(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
+    kg = Number(kg);
     frambuesa.kg= frambuesa.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarPitayas(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
+    kg = Number(kg);
     pitaya.kg= pitaya.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarArandanos(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
+    kg = Number(kg);
     arandano.kg= arandano.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarPlatanos(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
+    kg = Number(kg);
     platano.kg= platano.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarPapayas(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
+    kg = Number(kg);
     papaya.kg= papaya.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarFresas(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
-    melon.kg= melon.kg + kg;
+    kg = Number(kg);
+    fresa.kg= fresa.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarMelocotones(){
     let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kilos);
-    melon.kg= melon.kg + kg;
+    kg = Number(kg);
+    melocoton.kg= melocoton.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
+
+
+
+//Creo el siguiente array donde se recogeran todas las frutas para operar con el más tarde
+
+var frutas = [melon, manzana, pera, frambuesa, pitaya, arandano, platano, papaya, fresa, melocoton];
+
+
+//Ordeno el array de frutas de forma alfabetica inversa para mas tarde mostrar las frutas en este orden
+
+var frutasInverso= frutas.sort(((a, b) => b.nombre > a.nombre));
+
+
+/**
+ * Función que recogera todos los precios para calcular el precio total
+ */
+ 
+ var precioTotal=0;
+ function total(){
+     for(i=0; i<frutas.length; i++){
+         precioTotal= precioTotal+((frutas[i].kg)*(frutas[i].precio))
+     }
+
+     return precioTotal;
+ }
+
+/**
+ * Funcion que calcula el precio medio
+ */
+ function precioMedio(){ 
+    let medio=0;
+    medio= (total()/pesoTotal);
+
+    return medio;
+}
+
+
+/**
+ * Funcion monstrar ventanas emergentes
+ */
+
+
+
+
+
+/***
+ * Funcion que mostrara las ventanas emergentes y el resultado final
+ */
+
 function finalizarPedido(){
-    console.log("precio total:" +total());
-    console.log("peso total:" +pesoTotal());
-    console.log("precio medio:"+precioMedio());
+
+    let divTicket = document.getElementById("Ticket");
+    
+    //generar la hora
+    
+    var obtenerFecha = new Date();
+
+    let zonaHora = document.createElement("p");
+    zonaHora.innerHTML="Fecha: " + obtenerFecha;
+    divTicket.appendChild(zonaHora);
+    
+    //generar lista fruta
+    let zonaFruta = document.createElement("p");
+    
+    for(i=0; i< frutasInverso.length;i++){
+
+        if (frutasInverso[i].kg > 0){
+            
+            let precioFruta=(frutasInverso[i].precio)*(frutasInverso[i].kg);
+
+            let linea = document.createElement("p");
+            linea.innerHTML =  frutasInverso[i].nombre+" ---- "+frutasInverso[i].kg+"kg ---"+frutasInverso[i].precio + "€ -- "+ precioFruta+"€";
+            divTicket.appendChild(linea);
+
+        }
+
+    }
+
+    //generar conclusion
+    let zonaFinal = document.createElement("p");
+    zonaFinal.innerHTML="Precio Total: " + total() +"€ <br> "+ " Precio Medio: "+precioMedio()+"€";
+    divTicket.appendChild(zonaFinal);
+   
 
 }
+
