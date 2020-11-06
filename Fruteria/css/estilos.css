@@ -1,0 +1,23 @@
+/**
+Hoja de estilos para la frutería 
+*/
+
+
+#frutas{
+    float: left;
+    width: 70%;
+    
+}
+
+#lateral{
+    float: right;
+    width: 25%;
+    height: 100%;
+}
+#Ticket{
+    width: 500px;
+    height: auto;
+    border: 1px black solid;
+    min-height: 20px;
+    margin-bottom: 20px;
+}
