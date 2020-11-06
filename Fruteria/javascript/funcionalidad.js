@@ -63,72 +63,72 @@ var melocoton= new FrutaVerano("melocoton",0,1.40,"no es de proximidad","Murcia"
 var pesoTotal = 0;
 
  function sumarMelones(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("melon").value;
+    let kg = Number(recogido);
     melon.kg= melon.kg + kg;
     pesoTotal=pesoTotal+kg;
     
  }
 
  function sumarManzanas(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("manzana").value;
+    let kg = Number(recogido);
     manzana.kg= manzana.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarPeras(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
-    manzana.kg= manzana.kg + kg;
+    let recogido = document.getElementById("pera").value;
+    let kg = Number(recogido);
+    pera.kg= pera.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarFrambuesas(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("frambuesa").value;
+    let kg = Number(recogido);
     frambuesa.kg= frambuesa.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarPitayas(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("pitaya").value;
+    let kg = Number(recogido);
     pitaya.kg= pitaya.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarArandanos(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("arandano").value;
+    let kg = Number(recogido);
     arandano.kg= arandano.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarPlatanos(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("platano").value;
+    let kg = Number(recogido);
     platano.kg= platano.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarPapayas(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("papaya").value;
+    let kg = Number(recogido);
     papaya.kg= papaya.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarFresas(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("fresa").value;
+    let kg = Number(recogido);
     fresa.kg= fresa.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
 
 function sumarMelocotones(){
-    let kg = prompt("Kilogramos que deseo comprar");
-    kg = Number(kg);
+    let recogido = document.getElementById("melocoton").value;
+    let kg = Number(recogido);
     melocoton.kg= melocoton.kg + kg;
     pesoTotal=pesoTotal+kg;
 }
