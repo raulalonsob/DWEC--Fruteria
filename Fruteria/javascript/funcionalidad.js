@@ -60,14 +60,14 @@ var melocoton= new FrutaVerano("melocoton",0,1.40,"no es de proximidad","Murcia"
 /**
  * Suma de los kg y recogida de peso y kg totales
  */
-var pesoTotal = 0;
+var pesoTotal=0;
 
  function sumarMelones(){
     let id = 0;
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     melon.kg= melon.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
     
  }
@@ -77,7 +77,7 @@ var pesoTotal = 0;
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     manzana.kg= manzana.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
 }
 
@@ -86,7 +86,7 @@ function sumarPeras(){
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     pera.kg= pera.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
 }
 
@@ -95,7 +95,7 @@ function sumarFrambuesas(){
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     frambuesa.kg= frambuesa.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
 }
 
@@ -104,7 +104,7 @@ function sumarPitayas(){
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     pitaya.kg= pitaya.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
 }
 
@@ -113,7 +113,7 @@ function sumarArandanos(){
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     arandano.kg= arandano.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
 }
 
@@ -122,7 +122,7 @@ function sumarPlatanos(){
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     platano.kg= platano.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
 }
 
@@ -131,7 +131,7 @@ function sumarPapayas(){
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     papaya.kg= papaya.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
 }
 
@@ -140,7 +140,7 @@ function sumarFresas(){
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     fresa.kg= fresa.kg + kg;
-    pesoTotal=pesoTotal+kg;
+
     anadeLateral(id,kg);
 
 }
@@ -150,7 +150,6 @@ function sumarMelocotones(){
     let recogido = document.getElementById(frutas[id].nombre).value;
     let kg = Number(recogido);
     melocoton.kg= melocoton.kg + kg;
-    pesoTotal=pesoTotal+kg;
     anadeLateral(id,kg);
 }
 
@@ -186,8 +185,9 @@ var frutasInverso= frutas.sort(((a, b) => b.nombre > a.nombre));
  * Función que recogera todos los precios para calcular el precio total
  */
  
- var precioTotal=0;
+
  function total(){
+     let precioTotal=0;
      for(i=0; i<frutas.length; i++){
          precioTotal= precioTotal+((frutas[i].kg)*(frutas[i].precio))
      }
@@ -198,9 +198,16 @@ var frutasInverso= frutas.sort(((a, b) => b.nombre > a.nombre));
 /**
  * Funcion que calcula el precio medio
  */
+
  function precioMedio(){ 
-    let medio=0;
-    medio= (total()/pesoTotal);
+    let pesoTotal=0;
+    for (i=0; i<frutas.length; i++){
+        pesoTotal= pesoTotal+(frutas[i].kg);
+    }
+    let medio = 0;
+    console.log(pesoTotal);
+    console.log (total());
+    medio = (total()/pesoTotal);
 
     return medio;
 }

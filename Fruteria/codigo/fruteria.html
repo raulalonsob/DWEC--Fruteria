@@ -10,83 +10,116 @@
         <h1>Frutería    
         </h1>
         <div id="frutas">
-             <div >
-            <input type="image" src="../imagenes/melon.jpg" width="350" height="250" onclick="sumarMelones()"><br>
+             <div class="alinear">
+            <input type="image" class="imagen"  src="../imagenes/melon.jpg"  onclick="sumarMelones()"><br>
             <h3>Melón:  0.74€</h3>
             <input type="text"  id="melon">
+            
             </div>
-            <hr>
-            <div>
-                <input type="image" src="../imagenes/manzana.jpg" width="300" height="300" onclick="sumarManzanas()"><br>
+            
+            <div class="alinear">
+                <input type="image" class="imagen" src="../imagenes/manzana.jpg"  onclick="sumarManzanas()"><br>
                 <h3> Manzana: 1.69€</h3>
                 <input type="text"  id="manzana">
+                
             </div>
-            <hr>
-            <div>
-                <input type="image" src="../imagenes/pera.jpg" width="300" height="300" onclick="sumarPeras()"><br>
+            
+            <div class="alinear">
+                <input type="image" class="imagen" src="../imagenes/pera.jpg" width="300" height="300" onclick="sumarPeras()"><br>
                 <h3> Pera:  1.59€</h3>
                 <input type="text"  id="pera">
+                
             </div>
-            <hr>
-            <div>
-                <input type="image" src="../imagenes/frambuesas.jpg" width="350" height="300" onclick="sumarFrambuesas()"><br>
+            
+            <div class="alinear">
+                <input type="image" class="imagen" src="../imagenes/frambuesas.jpg" width="350" height="300" onclick="sumarFrambuesas()"><br>
                 <h3> Frambuesa:  12.74€/kg</h3>
                 <input type="text"  id="frambuesa">
+                
             </div>
-            <hr>
-            <div>
-                <input type="image" src="../imagenes/pitaya.jpg" width="310" height="300" onclick="sumarPitayas()"><br>
+            
+            <div class="alinear">
+                <input type="image" class="imagen" src="../imagenes/pitaya.jpg" width="310" height="300" onclick="sumarPitayas()"><br>
                 <h3>Pitaya:  7.54€/kg</h3>
                 <input type="text"  id="pitaya">
+                
             </div>
-            <hr>
-            <div>
-                <input type="image" src="../imagenes/arandano.jpg" width="310" height="250" onclick="sumarArandanos()" ><br>
+            
+            <div class="alinear">
+                <input type="image" class="imagen" src="../imagenes/arandano.jpg" width="310" height="250" onclick="sumarArandanos()" ><br>
                 <h3>Arandano: 7.15€/kg</h3>
                 <input type="text"  id="arandano">
+                
             </div>
-            <hr>
-            <div>
-                <input type="image" src="../imagenes/platano.jpg" width="310" height="250" onclick="sumarPlatanos()"><br>
+            
+            <div class="alinear">
+                <input type="image" class="imagen" src="../imagenes/platano.jpg" width="310" height="250" onclick="sumarPlatanos()"><br>
                 <h3>Plátano:  2.15€/kg</h3>
                 <input type="text"  id="platano">
-            </div>
-            <hr>
-            <div>
                 
-                <input type="image" src="../imagenes/papaya.jpg" width="310" height="250" onclick="sumarPapayas()"><br>
+            </div>
+            
+            <div class="alinear">
+                
+                <input type="image" class="imagen" src="../imagenes/papaya.jpg" width="310" height="250" onclick="sumarPapayas()"><br>
                 <h3> Papaya: 5.35€/kg</h3>
                 <input type="text"  id="papaya">
+                
             </div>
-            <hr>
-            <div>
-                <input type="image" src="../imagenes/fresa.jpg" width="310" height="250" onclick="sumarFresas()"><br>
+            
+            <div class="alinear">
+                <input type="image" class="imagen" src="../imagenes/fresa.jpg" width="310" height="250" onclick="sumarFresas()"><br>
                 <h3> Fresa: 5.74€/kg</h3>
                 <input type="text"  id="fresa">
+                
             </div>
-            <hr>
-            <div>
-                <input type="image" src="../imagenes/melocoton.jpg" width="310" height="250" onclick="sumarMelocotones()"><br>
+            
+            <div class="alinear">
+                <input type="image" class="imagen" src="../imagenes/melocoton.jpg" width="310" height="250" onclick="sumarMelocotones()"><br>
                 <h3>Melocotón:  1.40€/kg</h3>
                 <input type="text"  id="melocoton">
+                
             </div>        
-            <br><hr>
             <br>
+            
             
             <div>
             <input type="button"  value="Terminar pedido"  onclick="finalizarPedido()"><br>
-        <br>    
+            <br>
         </div>
             
             
             <!-- zona donde se representara el ticket al finalizar el pedido-->
-            <div id="Ticket">
+            <!-- 
+                <div id="Ticket" class="alinear" >
             
             </div>
+            -->
+            <!-- nueva seccion para el cuestionario-->
+
        
        
         </div>
-       
+        <div id="Divformulario">
+            <form>
+                <label for="nombre">Nombre: </label>
+                <input id="nombre" type="text" size="20">
+                <label for="apellido">Apellidos: </label>
+                <input id="apellido" type="text" size="20"><br>
+                <label for="direccion">Dirección: </label>
+                <input id="direccion" type="text" size="20"><br>
+                <label for="correo">Email: </label>
+                <input id="correo" type="mail" size="20"><br>
+                <label id="formPago">Escoge forma de pago:<br></label>
+                <input type="radio" name="pago" value="tarjeta">Tarjeta
+                <input type="radio" name="pago" value="contrareembolso">Contrareembolso<br>
+                <label id="AfirmacionCliente">¿Dispone de tarjeta Cliente?<br></label>
+                <input type="radio" name="cliente" value="si">Si
+                <input type="radio" name="cliente" value="no">No<br>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpiar Formulario</button>
+            </form>
+        </div>
 
 
         <div id="lateral">
