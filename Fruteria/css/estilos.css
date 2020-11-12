@@ -5,35 +5,25 @@ body{
     background-color: bisque;
 }
 
-#frutas{
-    float: left;
-    width: 70%;
-    height: 70%;
-    
-}
 
-#lateral{
-    float: right;
-    width: 25%;
-    height: 70%;
-    max-height: 400px;
-    border: 1px black solid;
-}
-#Ticket{
+
+
+/**#Ticket{
     width: 500px;
     height: auto;
     border: 1px black solid;
     min-height: 20px;
     margin-bottom: 20px;
-}
+}*/
+
 .imagen{
-    margin: 0.5px;
+    margin-right: 5px;
     width: 100px;
     height: 100px;
     float: left;
 }
 .alinear{
-    float: left; 
+    float: left;  
     width: 300px;
     border-right: 2px ridge ;
     border-bottom: 2px ridge;
@@ -42,8 +32,44 @@ body{
 
 
 #Divformulario{
+    
+    margin-top: 2%;
     float: left;
-    height:200px;
+    height:auto;
     width: 100%;
     border: 1px solid black;
+}
+#DivSuperior{
+    min-height: 600px;
+    margin-bottom: 2%;
+}
+#frutas{
+    float: left;
+    width: 68%;
+    height: 600px;
+    max-width: 900px;
+    overflow: auto;
+    
+}
+#lateral{
+    float: right;
+    width: 30%;
+    height: 580px
+}
+#form1{
+    margin: 1%;
+    float: left;
+    width: 40%;
+}
+#form2{
+    float: left;
+    width: 20%;
+}
+#form3{
+    margin: 1%;
+    float: left;
+    width: 30%;
+    border: 1px black solid;
+    height: auto;
+    min-height: 60px;
 }

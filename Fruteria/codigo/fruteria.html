@@ -9,6 +9,7 @@
     <body>
         <h1>Frutería    
         </h1>
+        <div id="DivSuperior">
         <div id="frutas">
              <div class="alinear">
             <input type="image" class="imagen"  src="../imagenes/melon.jpg"  onclick="sumarMelones()"><br>
@@ -39,21 +40,21 @@
             </div>
             
             <div class="alinear">
-                <input type="image" class="imagen" src="../imagenes/pitaya.jpg" width="310" height="300" onclick="sumarPitayas()"><br>
+                <input type="image" class="imagen" src="../imagenes/pitaya.jpg" onclick="sumarPitayas()"><br>
                 <h3>Pitaya:  7.54€/kg</h3>
                 <input type="text"  id="pitaya">
                 
             </div>
             
             <div class="alinear">
-                <input type="image" class="imagen" src="../imagenes/arandano.jpg" width="310" height="250" onclick="sumarArandanos()" ><br>
+                <input type="image" class="imagen" src="../imagenes/arandano.jpg" onclick="sumarArandanos()" ><br>
                 <h3>Arandano: 7.15€/kg</h3>
                 <input type="text"  id="arandano">
                 
             </div>
             
             <div class="alinear">
-                <input type="image" class="imagen" src="../imagenes/platano.jpg" width="310" height="250" onclick="sumarPlatanos()"><br>
+                <input type="image" class="imagen" src="../imagenes/platano.jpg" onclick="sumarPlatanos()"><br>
                 <h3>Plátano:  2.15€/kg</h3>
                 <input type="text"  id="platano">
                 
@@ -61,34 +62,34 @@
             
             <div class="alinear">
                 
-                <input type="image" class="imagen" src="../imagenes/papaya.jpg" width="310" height="250" onclick="sumarPapayas()"><br>
+                <input type="image" class="imagen" src="../imagenes/papaya.jpg" onclick="sumarPapayas()"><br>
                 <h3> Papaya: 5.35€/kg</h3>
                 <input type="text"  id="papaya">
                 
             </div>
             
             <div class="alinear">
-                <input type="image" class="imagen" src="../imagenes/fresa.jpg" width="310" height="250" onclick="sumarFresas()"><br>
+                <input type="image" class="imagen" src="../imagenes/fresa.jpg" onclick="sumarFresas()"><br>
                 <h3> Fresa: 5.74€/kg</h3>
                 <input type="text"  id="fresa">
                 
             </div>
             
             <div class="alinear">
-                <input type="image" class="imagen" src="../imagenes/melocoton.jpg" width="310" height="250" onclick="sumarMelocotones()"><br>
+                <input type="image" class="imagen" src="../imagenes/melocoton.jpg" onclick="sumarMelocotones()"><br>
                 <h3>Melocotón:  1.40€/kg</h3>
                 <input type="text"  id="melocoton">
                 
             </div>        
             <br>
-            
-            
-            <div>
-            <input type="button"  value="Terminar pedido"  onclick="finalizarPedido()"><br>
-            <br>
+   
         </div>
-            
-            
+        
+        <!-- zona lateral donde se ira mostrando la información de la fruta añadida-->
+        <div id="lateral">
+
+        </div>
+             
             <!-- zona donde se representara el ticket al finalizar el pedido-->
             <!-- 
                 <div id="Ticket" class="alinear" >
@@ -97,34 +98,51 @@
             -->
             <!-- nueva seccion para el cuestionario-->
 
-       
-       
         </div>
+        <div>
+            <input type="button"  value="Terminar pedido"  onclick="finalizarPedido()"><br> 
+        </div>
+        <!-- div para el formulario -->
         <div id="Divformulario">
             <form>
+            <div id="form1">
+
                 <label for="nombre">Nombre: </label>
                 <input id="nombre" type="text" size="20">
                 <label for="apellido">Apellidos: </label>
-                <input id="apellido" type="text" size="20"><br>
+                <input id="apellido" type="text" size="20">
+                </p>
+                <p>   
                 <label for="direccion">Dirección: </label>
-                <input id="direccion" type="text" size="20"><br>
+                <input id="direccion" type="text" size="20"><br>    
+                </p>
+                <p>
                 <label for="correo">Email: </label>
-                <input id="correo" type="mail" size="20"><br>
-                <label id="formPago">Escoge forma de pago:<br></label>
+                <input id="correo" type="mail" size="20"><br>                    
+                </p>
+            </div>
+            <div id="form2">
+                <p><label id="formPago">Escoge forma de pago:<br></label>
                 <input type="radio" name="pago" value="tarjeta">Tarjeta
                 <input type="radio" name="pago" value="contrareembolso">Contrareembolso<br>
-                <label id="AfirmacionCliente">¿Dispone de tarjeta Cliente?<br></label>
+                </p><p><label id="AfirmacionCliente">¿Dispone de tarjeta Cliente?<br></label>
                 <input type="radio" name="cliente" value="si">Si
                 <input type="radio" name="cliente" value="no">No<br>
+                </p>
+                <p>
                 <button type="submit">Enviar</button>
-                <button type="reset">Limpiar Formulario</button>
+                <button type="reset">Limpiar Formulario</button>   
+                </p>
+               
+            </div>
+            <div id="form3">
+                
+            </div>
             </form>
         </div>
 
 
-        <div id="lateral">
-            <!-- zona lateral donde se ira mostrando la información de la fruta añadida-->
-        </div>
+
 
 
 
