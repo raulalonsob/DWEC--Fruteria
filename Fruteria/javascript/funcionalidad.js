@@ -60,7 +60,52 @@ var melocoton= new FrutaVerano("melocoton",0,1.40,"no es de proximidad","Murcia"
 /**
  * Suma de los kg y recogida de peso y kg totales
  */
-var pesoTotal=0;
+function sumarFruta(fruta){
+    switch(fruta){
+        case 'melones':
+
+
+            break;
+        case 'manzanas':
+
+
+            break;
+        case 'peras':
+
+
+            break;
+        case 'frambuesas':
+
+
+        break;
+        case 'pitayas':
+
+
+            break;
+        case 'arandanos':
+
+
+            break;
+        case 'platanos':
+
+
+            break;
+        case 'papayas':
+
+
+            break;
+        case 'fresas':
+
+
+            break;      
+            
+            case 'melocotones':
+
+
+                break;   
+    }
+
+}
 
  function sumarMelones(){
     let id = 0;
