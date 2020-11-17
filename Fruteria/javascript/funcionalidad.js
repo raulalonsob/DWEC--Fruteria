@@ -58,145 +58,68 @@ var melocoton= new FrutaVerano("melocoton",0,1.40,"no es de proximidad","Murcia"
 
 
 /**
- * Suma de los kg y recogida de peso y kg totales
+ * Suma de los kg y llamada a la funcion de añadir al lateral
  */
 function sumarFruta(fruta){
+    let recogido = document.getElementById(fruta).value;
+    let kg = Number(recogido);
+    
     switch(fruta){
-        case 'melones':
-
-
-            break;
-        case 'manzanas':
-
+        case "melon":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
             break;
-        case 'peras':
-
+        case "manzana":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
             break;
-        case 'frambuesas':
+        case "pera":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
+            break;
+        case "frambuesa":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
         break;
-        case 'pitayas':
-
-
-            break;
-        case 'arandanos':
-
+        case "pitaya":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
             break;
-        case 'platanos':
-
-
-            break;
-        case 'papayas':
-
+        case "arandano":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
             break;
-        case 'fresas':
+        case "platano":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
+            break;
+        case "papaya":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
+
+            break;
+        case "fresa":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
             break;      
             
-            case 'melocotones':
+        case "melocoton":
+            fruta.kg= fruta.kg + kg;
+            anadeLateral((fruta),kg);
 
-
-                break;   
+             break;   
     }
 
 }
 
- function sumarMelones(){
-    let id = 0;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    melon.kg= melon.kg + kg;
-
-    anadeLateral(id,kg);
-    
- }
-
- function sumarManzanas(){
-    let id = 1;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    manzana.kg= manzana.kg + kg;
-
-    anadeLateral(id,kg);
-}
-
-function sumarPeras(){
-    let id = 2;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    pera.kg= pera.kg + kg;
-
-    anadeLateral(id,kg);
-}
-
-function sumarFrambuesas(){
-    let id = 3;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    frambuesa.kg= frambuesa.kg + kg;
-
-    anadeLateral(id,kg);
-}
-
-function sumarPitayas(){
-    let id = 4;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    pitaya.kg= pitaya.kg + kg;
-
-    anadeLateral(id,kg);
-}
-
-function sumarArandanos(){
-    let id = 5;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    arandano.kg= arandano.kg + kg;
-
-    anadeLateral(id,kg);
-}
-
-function sumarPlatanos(){
-    let id = 6;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    platano.kg= platano.kg + kg;
-
-    anadeLateral(id,kg);
-}
-
-function sumarPapayas(){
-    let id = 7;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    papaya.kg= papaya.kg + kg;
-
-    anadeLateral(id,kg);
-}
-
-function sumarFresas(){
-    let id = 8;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    fresa.kg= fresa.kg + kg;
-
-    anadeLateral(id,kg);
-
-}
-
-function sumarMelocotones(){
-    let id = 9;
-    let recogido = document.getElementById(frutas[id].nombre).value;
-    let kg = Number(recogido);
-    melocoton.kg= melocoton.kg + kg;
-    anadeLateral(id,kg);
-}
 
 /**
  * Funcion que irá añadiendo los kg y la fruta al lateral
@@ -206,7 +129,7 @@ function anadeLateral (i,kgs) {
     if (kgs>0){
         let divLateral = document.getElementById("lateral");
         let linea = document.createElement("p");
-        linea.innerHTML =  frutas[i].nombre+" ---- "+ kgs+"kg"
+        linea.innerHTML =  i+" ---- "+ kgs+"kg"
         divLateral.appendChild(linea);
 
     }
