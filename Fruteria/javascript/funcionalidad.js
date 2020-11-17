@@ -6,15 +6,44 @@ window.onload = () => {
     //listener para la suma de los kg de fruta
     document.getElementById("melonImg").addEventListener("click", sumarFruta.bind("melon"), false);
     document.getElementById("manzanaImg").addEventListener("click", sumarFruta.bind("manzana"), false);
-    document.getElementById("fresaImg").addEventListener("click", sumarFruta.bind("pera"), false);
+    document.getElementById("peraImg").addEventListener("click", sumarFruta.bind("pera"), false);
     document.getElementById("frambuesaImg").addEventListener("click", sumarFruta.bind("frambuesa"), false);
     document.getElementById("pitayaImg").addEventListener("click", sumarFruta.bind("pitaya"), false);
     document.getElementById("arandanoImg").addEventListener("click", sumarFruta.bind("arandano"), false);
-    document.getElementById("platanoImg").addEventListener("click", sumarFruta.bind("plátano"), false);
+    document.getElementById("platanoImg").addEventListener("click", sumarFruta.bind("platano"), false);
     document.getElementById("papayaImg").addEventListener("click", sumarFruta.bind("papaya"), false);
     document.getElementById("fresaImg").addEventListener("click", sumarFruta.bind("fresa"), false);
     document.getElementById("melocotonImg").addEventListener("click", sumarFruta.bind("melocoton"), false);
+
+    //listener para el manejo del div Tarjeta de cliente
+    mostrarTarjeta();
+
 }
+
+/**
+ * funciones para el manejo del código del cliente
+ */
+
+    function mostrarTarjeta(){
+        var div=document.getElementById("form3");
+        var imput= document.getElementById("codCliente");
+        var label = document.getElementById("codigoCliente");
+
+        form3.hidden=true;
+        imput.disabled=true;
+        document.getElementById("siTarjeta").addEventListener("change",function(){
+            form3.hidden=false;
+            imput.disabled=false;
+        },false);
+        document.getElementById("noTarjeta").addEventListener("change",function(){
+            form3.hidden=true;
+            imput.disabled=true;
+        },false);
+       
+    }
+
+
+
 
  /**
   * Clase principal de Fruta
@@ -37,6 +66,9 @@ class FrutaVerano extends Fruta {
         this.proximidad = proximidad;
         this.region = region;
     }
+    getFruta(){
+        return this.nombre+ " es fruta de verano, "+this.proximidad+" y están recogidas en "+this.region;
+    }
 }
 
 
@@ -47,6 +79,9 @@ class FrutaInvierno extends Fruta {
     constructor(nombre, kg, precio, conservar) {
         super(nombre, kg, precio);
         this.conservar = conservar;
+    }
+    getFruta(){
+        return this.nombre+" es fruta de invierno y "+this.conservar+" conservar en nevera";
     }
 
 }
@@ -193,51 +228,15 @@ var frutasInverso= frutas.sort(((a, b) => b.nombre > a.nombre));
 }
 
 
-/**
- * Funcion monstrar ventanas emergentes
- */
-
-
-
-
-
 /***
  * Funcion que mostrara las ventanas emergentes y el resultado final
  */
 
-function finalizarPedido(){
-
-    let divTicket = document.getElementById("Ticket");
+function terminarPedido(){
+    window.open("ventanaTicket.html","ventana","width=500,height=300,scrollbars=NO");
     
-    //generar la hora
-    
-    var obtenerFecha = new Date();
-
-    let zonaHora = document.createElement("p");
-    zonaHora.innerHTML="Fecha: " + obtenerFecha;
-    divTicket.appendChild(zonaHora);
-    
-    //generar lista fruta
-    let zonaFruta = document.createElement("p");
-    
-    for(i=0; i< frutasInverso.length;i++){
-
-        if (frutasInverso[i].kg > 0){
-            
-            let precioFruta=(frutasInverso[i].precio)*(frutasInverso[i].kg);
-
-            let linea = document.createElement("p");
-            linea.innerHTML =  frutasInverso[i].nombre+" ---- "+frutasInverso[i].kg+"kg ---"+frutasInverso[i].precio + "€ -- "+ precioFruta+"€";
-            divTicket.appendChild(linea);
-
-        }
-
-    }
-
-    //generar conclusion
-    let zonaFinal = document.createElement("p");
-    zonaFinal.innerHTML="Precio Total: " + total() +"€ <br> "+ " Precio Medio: "+precioMedio()+"€";
-    divTicket.appendChild(zonaFinal);
-   
-
 }
+
+
+
+   

@@ -12,7 +12,7 @@
         <div id="DivSuperior">
         <div id="frutas">
              <div class="alinear">
-            <input type="image" class="imagen"  src="../imagenes/melon.jpg"  id="melonImg"><br>
+            <input type="image" class="imagen"  src="../imagenes/melon.jpg"  id="melonImg" data-toggle="tooltip" title="Hooray!"><br>
             <h3>Melón:  0.74€</h3>
             <input type="text"  id="melon">
             
@@ -100,7 +100,7 @@
 
         </div>
         <div>
-            <input type="button"  value="Terminar pedido"  onclick="finalizarPedido()"><br> 
+            <input type="button"  value="Realizar pedido"  onclick="terminarPedido()"><br> 
         </div>
         <!-- div para el formulario -->
         <div id="Divformulario">
@@ -125,9 +125,9 @@
                 <p><label for="pago" id="formPago">Escoge forma de pago:<br></label>
                 <input type="radio" name="pago" value="tarjeta">Tarjeta
                 <input type="radio" name="pago" value="contrareembolso">Contrareembolso<br>
-                </p><p><label id="AfirmacionCliente">¿Dispone de tarjeta Cliente?<br></label>
-                <input type="radio" name="cliente" value="si">Si
-                <input type="radio" name="cliente" value="no">No<br>
+                </p><p><label id="afirmacionCliente">¿Dispone de tarjeta Cliente?<br></label>
+                <input type="radio" name="cliente" value="si" id="siTarjeta">Si
+                <input type="radio" name="cliente" value="no" id="noTarjeta">No<br>
                 </p>
                 <p>
                 <button type="submit">Enviar</button>
@@ -137,7 +137,7 @@
             </div>
             <div id="form3">
                 <p><label for="codCliente" id="codigoCliente">Codigo de cliente</label></p>
-                <input type="text" name="codCliente" id="codCliente" required pattern="[a-zA-Z]{3}[0-9]{4}(/|_|.|#|&)$">
+                <input type="text" name="codCliente" id="codCliente" placeholder="aaa0000/" required pattern="[a-zA-Z]{3}[0-9]{4}(/|_|.|#|&)$">
             </div>
             </form>
         </div>
