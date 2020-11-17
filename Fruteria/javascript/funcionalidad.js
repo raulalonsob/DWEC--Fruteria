@@ -1,9 +1,20 @@
-/**Arrays donde se guardaran los datos*/
-/**var frutas=["melon","manzana","pera","frambuesa","pitaya","arandano","platano","papaya","fresa","melocoton"];
-var precios=[0.74, 1.69, 1.59, 12.74, 7.54,7.15, 2.15,5.35,5.74,1.40];
-var kilos=[0,0,0,0,0,0,0,0,0,0];
+/**
+ * Lugar donde se manejaran los listener 
  */
+window.onload = () => {
 
+    //listener para la suma de los kg de fruta
+    document.getElementById("melonImg").addEventListener("click", sumarFruta.bind("melon"), false);
+    document.getElementById("manzanaImg").addEventListener("click", sumarFruta.bind("manzana"), false);
+    document.getElementById("fresaImg").addEventListener("click", sumarFruta.bind("pera"), false);
+    document.getElementById("frambuesaImg").addEventListener("click", sumarFruta.bind("frambuesa"), false);
+    document.getElementById("pitayaImg").addEventListener("click", sumarFruta.bind("pitaya"), false);
+    document.getElementById("arandanoImg").addEventListener("click", sumarFruta.bind("arandano"), false);
+    document.getElementById("platanoImg").addEventListener("click", sumarFruta.bind("plátano"), false);
+    document.getElementById("papayaImg").addEventListener("click", sumarFruta.bind("papaya"), false);
+    document.getElementById("fresaImg").addEventListener("click", sumarFruta.bind("fresa"), false);
+    document.getElementById("melocotonImg").addEventListener("click", sumarFruta.bind("melocoton"), false);
+}
 
  /**
   * Clase principal de Fruta
@@ -60,7 +71,8 @@ var melocoton= new FrutaVerano("melocoton",0,1.40,"no es de proximidad","Murcia"
 /**
  * Suma de los kg y llamada a la funcion de añadir al lateral
  */
-function sumarFruta(fruta){
+function sumarFruta(){
+    let fruta = this.toString();
     let recogido = document.getElementById(fruta).value;
     let kg = Number(recogido);
     
@@ -229,4 +241,3 @@ function finalizarPedido(){
    
 
 }
-
