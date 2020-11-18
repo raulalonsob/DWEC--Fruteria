@@ -85,6 +85,61 @@ class FrutaInvierno extends Fruta {
     }
 
 }
+function tooltip(fruta){
+    //let fruta = this.toString();
+    switch(fruta){
+        case "melon":
+            name=frutas[0].nombre;
+            texto= name.getFruta();
+            break;
+        case "manzana":
+            frutas[1].kg= frutas[1].kg + kg;
+            anadeLateral((fruta),kg);
+
+            break;
+        case "pera":
+            frutas[2].kg= frutas[2].kg + kg;
+            anadeLateral((fruta),kg);
+
+            break;
+        case "frambuesa":
+            frutas[3].kg= frutas[3].kg + kg;
+            anadeLateral((fruta),kg);
+
+        break;
+        case "pitaya":
+            frutas[4].kg= frutas[4].kg + kg;
+            anadeLateral((fruta),kg);
+
+            break;
+        case "arandano":
+            frutas[5].kg= frutas[5].kg + kg;
+            anadeLateral((fruta),kg);
+
+            break;
+        case "platano":
+            frutas[6].kg= frutas[6].kg + kg;
+            anadeLateral((fruta),kg);
+
+            break;
+        case "papaya":
+            frutas[7].kg= frutas[7].kg + kg;
+            anadeLateral((fruta),kg);
+
+            break;
+        case "fresa":
+            frutas[8].kg= frutas[8].kg + kg;
+            anadeLateral((fruta),kg);
+
+            break;      
+            
+        case "melocoton":
+            frutas[9].kg= frutas[9].kg + kg;
+            anadeLateral((fruta),kg);
+
+             break;   
+    }
+}
 
 /**
  * Objetos donde se almacena la información de cada fruta
@@ -113,53 +168,53 @@ function sumarFruta(){
     
     switch(fruta){
         case "melon":
-            fruta.kg= fruta.kg + kg;
+            frutas[0].kg= frutas[0].kg + kg;
             anadeLateral((fruta),kg);
 
             break;
         case "manzana":
-            fruta.kg= fruta.kg + kg;
+            frutas[1].kg= frutas[1].kg + kg;
             anadeLateral((fruta),kg);
 
             break;
         case "pera":
-            fruta.kg= fruta.kg + kg;
+            frutas[2].kg= frutas[2].kg + kg;
             anadeLateral((fruta),kg);
 
             break;
         case "frambuesa":
-            fruta.kg= fruta.kg + kg;
+            frutas[3].kg= frutas[3].kg + kg;
             anadeLateral((fruta),kg);
 
         break;
         case "pitaya":
-            fruta.kg= fruta.kg + kg;
+            frutas[4].kg= frutas[4].kg + kg;
             anadeLateral((fruta),kg);
 
             break;
         case "arandano":
-            fruta.kg= fruta.kg + kg;
+            frutas[5].kg= frutas[5].kg + kg;
             anadeLateral((fruta),kg);
 
             break;
         case "platano":
-            fruta.kg= fruta.kg + kg;
+            frutas[6].kg= frutas[6].kg + kg;
             anadeLateral((fruta),kg);
 
             break;
         case "papaya":
-            fruta.kg= fruta.kg + kg;
+            frutas[7].kg= frutas[7].kg + kg;
             anadeLateral((fruta),kg);
 
             break;
         case "fresa":
-            fruta.kg= fruta.kg + kg;
+            frutas[8].kg= frutas[8].kg + kg;
             anadeLateral((fruta),kg);
 
             break;      
             
         case "melocoton":
-            fruta.kg= fruta.kg + kg;
+            frutas[9].kg= frutas[9].kg + kg;
             anadeLateral((fruta),kg);
 
              break;   
@@ -232,11 +287,11 @@ var frutasInverso= frutas.sort(((a, b) => b.nombre > a.nombre));
  * Funcion que mostrara las ventanas emergentes y el resultado final
  */
 
+
+
 function terminarPedido(){
     window.open("ventanaTicket.html","ventana","width=500,height=300,scrollbars=NO");
-    
+   
 }
 
-
-
-   
+ 
