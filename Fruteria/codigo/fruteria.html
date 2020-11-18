@@ -99,44 +99,34 @@
 
         </div>
              
-            <!-- zona donde se representara el ticket al finalizar el pedido-->
-            <!-- 
-                <div id="Ticket" class="alinear" >
-            
-            </div>
-            -->
-            <!-- nueva seccion para el cuestionario-->
+        </div>
 
-        </div>
-        <div>
-            <input type="button"  value="Realizar pedido"  onclick="terminarPedido()"><br> 
-        </div>
         <!-- div para el formulario -->
         <div id="Divformulario">
-            <form>
+            <form id="form" novalidate>
             <div id="form1">
 
-                <label for="nombre">Nombre: </label>
-                <input id="nombre" type="text" size="20">
-                <label for="apellido">Apellidos: </label>
-                <input id="apellido" type="text" size="20">
+                <label id = "nomLabel" for="nombre">Nombre: </label>
+                <input id="nombre" type="text" size="20" minlength="4" maxlength="15" required><br>
+                <p><label id = "apLabel"for="apellido">Apellidos: </label>
+                <input id="apellido" type="text" size="20" required></p>
                 </p>
                 <p>   
-                <label for="direccion">Dirección: </label>
-                <input id="direccion" type="text" size="20"><br>    
+                <label id="dirLabel" for="direccion">Dirección: </label>
+                <input id="direccion" type="text" size="20"required><br>    
                 </p>
                 <p>
-                <label for="correo">Email: </label>
-                <input id="correo" type="mail" size="20"><br>                    
+                <label id="corLabel" for="correo">Email: </label>
+                <input id="correo" type="mail" size="20"required><br>                    
                 </p>
             </div>
             <div id="form2">
                 <p><label for="pago" id="formPago">Escoge forma de pago:<br></label>
-                <input type="radio" name="pago" value="tarjeta">Tarjeta
-                <input type="radio" name="pago" value="contrareembolso">Contrareembolso<br>
+                <input type="radio" name="pago" value="tarjeta" id = "tarjeta"required>Tarjeta
+                <input type="radio" name="pago" value="contrareembolso" id="contrareembolso"required>Contrareembolso<br>
                 </p><p><label id="afirmacionCliente">¿Dispone de tarjeta Cliente?<br></label>
-                <input type="radio" name="cliente" value="si" id="siTarjeta">Si
-                <input type="radio" name="cliente" value="no" id="noTarjeta">No<br>
+                <input type="radio" name="cliente" value="si" id="siTarjeta"required>Si
+                <input type="radio" name="cliente" value="no" id="noTarjeta"required>No<br>
                 </p>
                 <p>
                 <button type="submit">Enviar</button>

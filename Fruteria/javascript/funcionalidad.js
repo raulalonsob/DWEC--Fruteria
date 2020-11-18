@@ -31,6 +31,10 @@ window.onload = () => {
     document.getElementById("fresaImg").addEventListener("mouseover", mostrarTooltip.bind("fresa"), false);
     document.getElementById("melocotonImg").addEventListener("mouseover", mostrarTooltip.bind("melocoton"), false);
 
+    // Funcion para tramitar pedido
+
+    document.getElementById("form").addEventListener("submit", validar,false);
+
 }
 
 /**
@@ -85,7 +89,7 @@ class FrutaVerano extends Fruta {
 }
 
 
-//document.getElementbyId("span0").inneHTML=fruta[0].getFruta()
+
 /**
  * Clase hija de la clase Fruta que añade los atributos de invierno
  */
@@ -99,6 +103,9 @@ class FrutaInvierno extends Fruta {
     }
 
 }
+/**
+ * Funcion para mostrar los tooltip
+ */
 function mostrarTooltip(){
     let fruta = this.toString();
     let i
@@ -300,11 +307,94 @@ var frutasInverso= frutas.sort(((a, b) => b.nombre > a.nombre));
  * Funcion que mostrara las ventanas emergentes y el resultado final
  */
 
+function validar(event){
+    let correcto= true;
+    let nombre = document.getElementById("nombre");
+    let label1= document.getElementById("nomLabel");
+    if (!nombre.validity.valid){
+        label1.style.color="red";
+        event.preventDefault();
+        correcto=false;
+    }else{
+        label1.style.color="black";
+    }
+
+    let apellido = document.getElementById("apellido");
+    let label2= document.getElementById("apLabel");
+    if (!apellido.validity.valid){
+        label2.style.color="red";
+        event.preventDefault();
+        correcto=false;
+    }else{
+        label2.style.color="black";
+    }
+
+    let direccion= document.getElementById("direccion");
+    let label3= document.getElementById("dirLabel");
+    if(!direccion.validity.valid){
+        label3.style.color="red";
+        event.preventDefault();
+        correcto=false;
+    }else{
+        label3.style.color="black";
+    }
+
+    let correo= document.getElementById("correo");
+    let label4= document.getElementById("corLabel");
+    if(!correo.validity.valid){
+        label4.style.color="red";
+        event.preventDefault();
+        correcto=false;
+    }else{
+        label4.style.color="black";
+    }
+
+    let tarjeta = document.getElementById("tarjeta");
+    let contrareembolso = document.getElementById("contrareembolso");
+    let label5=document.getElementById("formPago")
+    if((!tarjeta.checked)&& (!contrareembolso.checked)){
+        label5.style.color="red";
+        event.preventDefault();
+        correcto=false;
+
+    }else {
+        label5.style.color="black";
+    }
 
 
-function terminarPedido(){
-    window.open("ventanaTicket.html","ventana","width=500,height=300,scrollbars=NO");
-   
+    let si = document.getElementById("siTarjeta");
+    let no = document.getElementById("noTarjeta");
+    let label6=document.getElementById("afirmacionCliente")
+    if((!si.checked)&& (!no.checked)){
+        label6.style.color="red";
+        event.preventDefault();
+        correcto=false;
+
+    }else {
+        label6.style.color="black";
+    }
+    
+    let codigo= document.getElementById("codCliente");
+    let label7= document.getElementById("codigoCliente")
+    if((si.checked)&&(!codigo.validity.valid)){
+        label7.style.color="red";
+        event.preventDefault();
+        correcto=false;
+    }else {
+        label7.style.color="black";
+    }
+    
+
+
+    if (correcto){
+            window.open("ventanaTicket.html","ventana","width=500,height=300,scrollbars=NO");
+    }
+    
 }
 
+
+
  
+function reset(){
+    location.reload();
+}

@@ -1,4 +1,8 @@
 window.onload=()=>{
+    //listener para botones
+    document.getElementById("terminar").addEventListener("click",terminarPedido,false);
+    document.getElementById("volver").addEventListener("click",volver,false);
+
     var vent= window.opener;
     let divTicket = document.getElementById("Ticket");
     
@@ -27,4 +31,15 @@ window.onload=()=>{
     let zonaFinal = document.createElement("p");
     zonaFinal.innerHTML="Precio Total: " + vent.total() +"€ <br> "+ " Precio Medio: "+vent.precioMedio()+"€";
     divTicket.appendChild(zonaFinal);
+}
+
+function terminarPedido(){
+    window.close();
+}
+
+function volver(){
+    window.opener.document.getElementById("form").submit();
+    window.close();
+    window.opener.reset();
+        
 }
