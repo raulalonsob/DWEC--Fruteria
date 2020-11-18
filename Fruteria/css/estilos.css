@@ -24,7 +24,7 @@ body{
 }
 .alinear{
     float: left;  
-    width: 300px;
+    width: 200px;
     border-right: 2px ridge ;
     border-bottom: 2px ridge;
     padding: 1%;
@@ -44,16 +44,17 @@ body{
     margin-bottom: 2%;
 }
 #frutas{
+    text-align: center;
     float: left;
-    width: 68%;
+    width: 78%;
     height: 600px;
-    max-width: 900px;
+    max-width: 1200px;
     overflow: auto;
     
 }
 #lateral{
     float: right;
-    width: 30%;
+    width: 20%;
     height: 580px;
     overflow: auto;
 }
@@ -73,3 +74,30 @@ body{
     height: auto;
     min-height: 60px;
 }
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

@@ -17,6 +17,19 @@ window.onload = () => {
 
     //listener para el manejo del div Tarjeta de cliente
     mostrarTarjeta();
+    
+    
+    //listener para mostrar tooltip
+    document.getElementById("melonImg").addEventListener("mouseover", mostrarTooltip.bind("melon"), false);
+    document.getElementById("manzanaImg").addEventListener("mouseover", mostrarTooltip.bind("manzana"), false);
+    document.getElementById("peraImg").addEventListener("mouseover", mostrarTooltip.bind("pera"), false);
+    document.getElementById("frambuesaImg").addEventListener("mouseover", mostrarTooltip.bind("frambuesa"), false);
+    document.getElementById("pitayaImg").addEventListener("mouseover", mostrarTooltip.bind("pitaya"), false);
+    document.getElementById("arandanoImg").addEventListener("mouseover", mostrarTooltip.bind("arandano"), false);
+    document.getElementById("platanoImg").addEventListener("mouseover", mostrarTooltip.bind("platano"), false);
+    document.getElementById("papayaImg").addEventListener("mouseover", mostrarTooltip.bind("papaya"), false);
+    document.getElementById("fresaImg").addEventListener("mouseover", mostrarTooltip.bind("fresa"), false);
+    document.getElementById("melocotonImg").addEventListener("mouseover", mostrarTooltip.bind("melocoton"), false);
 
 }
 
@@ -29,14 +42,14 @@ window.onload = () => {
         var imput= document.getElementById("codCliente");
         var label = document.getElementById("codigoCliente");
 
-        form3.hidden=true;
+        div.hidden=true;
         imput.disabled=true;
         document.getElementById("siTarjeta").addEventListener("change",function(){
-            form3.hidden=false;
+            div.hidden=false;
             imput.disabled=false;
         },false);
         document.getElementById("noTarjeta").addEventListener("change",function(){
-            form3.hidden=true;
+            div.hidden=true;
             imput.disabled=true;
         },false);
        
@@ -86,57 +99,56 @@ class FrutaInvierno extends Fruta {
     }
 
 }
-function tooltip(fruta){
-    //let fruta = this.toString();
+function mostrarTooltip(){
+    let fruta = this.toString();
+    let i
     switch(fruta){
         case "melon":
-            name=frutas[0].nombre;
-            texto= name.getFruta();
-            break;
+            i = 0;           
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
+   
         case "manzana":
-            frutas[1].kg= frutas[1].kg + kg;
-            anadeLateral((fruta),kg);
-
+            i = 1;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
             break;
         case "pera":
-            frutas[2].kg= frutas[2].kg + kg;
-            anadeLateral((fruta),kg);
+            i = 2;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
 
             break;
         case "frambuesa":
-            frutas[3].kg= frutas[3].kg + kg;
-            anadeLateral((fruta),kg);
-
+            i = 3;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
         break;
         case "pitaya":
-            frutas[4].kg= frutas[4].kg + kg;
-            anadeLateral((fruta),kg);
+            i = 4;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
 
             break;
         case "arandano":
-            frutas[5].kg= frutas[5].kg + kg;
-            anadeLateral((fruta),kg);
+            i = 5;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
 
             break;
         case "platano":
-            frutas[6].kg= frutas[6].kg + kg;
-            anadeLateral((fruta),kg);
+            i = 6;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
 
             break;
         case "papaya":
-            frutas[7].kg= frutas[7].kg + kg;
-            anadeLateral((fruta),kg);
+            i = 7;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
 
             break;
         case "fresa":
-            frutas[8].kg= frutas[8].kg + kg;
-            anadeLateral((fruta),kg);
+            i = 8;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
 
             break;      
             
         case "melocoton":
-            frutas[9].kg= frutas[9].kg + kg;
-            anadeLateral((fruta),kg);
+            i = 9;
+            document.getElementById("span" + i).innerHTML = frutas[i].getFruta();
 
              break;   
     }
