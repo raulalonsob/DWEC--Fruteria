@@ -72,6 +72,7 @@ class FrutaVerano extends Fruta {
 }
 
 
+//document.getElementbyId("span0").inneHTML=fruta[0].getFruta()
 /**
  * Clase hija de la clase Fruta que añade los atributos de invierno
  */
