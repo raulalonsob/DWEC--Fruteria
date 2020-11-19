@@ -1,9 +1,8 @@
 window.onload=()=>{
-    //listener para botones
-    document.getElementById("terminar").addEventListener("click",terminarPedido,false);
-    document.getElementById("volver").addEventListener("click",volver,false);
+    
+    
 
-    var vent= window.opener;
+
     let divTicket = document.getElementById("Ticket");
     
     //divTicket.innerHTML+=vent.mostrarTicket();
@@ -12,7 +11,7 @@ window.onload=()=>{
     let zonaHora = document.createElement("p");
     zonaHora.innerHTML="Fecha: " + obtenerFecha;
     divTicket.appendChild(zonaHora);
-    let arrayfrutas=vent.frutasInverso;
+    let arrayfrutas=window.opener.frutasInverso;
     
     for(i=0; i< arrayfrutas.length;i++){
         
@@ -29,17 +28,22 @@ window.onload=()=>{
     }
 
     let zonaFinal = document.createElement("p");
-    zonaFinal.innerHTML="Precio Total: " + vent.total() +"€ <br> "+ " Precio Medio: "+vent.precioMedio()+"€";
+    zonaFinal.innerHTML="Precio Total: " + window.opener.total() +"€ <br> "+ " Precio Medio: "+window.opener.precioMedio()+"€";
     divTicket.appendChild(zonaFinal);
+    
+    //listener para botones
+    document.getElementById("terminar").addEventListener("click",terminarPedido,false);
+    document.getElementById("volver").addEventListener("click",volver,false);
 }
+
 
 function terminarPedido(){
-    window.close();
-}
-
-function volver(){
     window.opener.document.getElementById("form").submit();
     window.close();
     window.opener.reset();
+}
+
+function volver(){
+    window.close();    
         
 }

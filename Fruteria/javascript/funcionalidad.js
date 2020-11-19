@@ -388,6 +388,7 @@ function validar(event){
 
     if (correcto){
             window.open("ventanaTicket.html","ventana","width=500,height=300,scrollbars=NO");
+            event.preventDefault();
     }
     
 }
